@@ -24,7 +24,7 @@ function Landing() {
         } else if (id === "" || id > 826 || id < 1) {
           toast.error('El dato es invalido o ya fue agregado');
         } else {
-          setCharacters([...Characters, data]);
+          setCharacters([data, ...Characters]);
         }
       });
   };
