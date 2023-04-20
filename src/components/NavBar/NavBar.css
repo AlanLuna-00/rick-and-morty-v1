@@ -1,0 +1,170 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    /* background-color: rgba(0, 0, 0, 0.195); 
+    backdrop-filter: blur(5px); */
+    background-color: #343232;
+    color: #fff;
+}
+
+.navbar-logo {
+    font-size: 28px;
+}
+ 
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    padding: 5px;
+}
+
+.navbar-links a:hover {
+    color: rgb(173, 168, 168);
+}
+
+
+@media only screen and (max-width: 850px) {
+    .rick-and-morty {
+        font-size: 28px;
+    }
+    /* navbar responsive */
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-links {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+    }
+    
+    .navbar-links>* {
+        margin-left: 10px;
+    }
+    
+    .navbar-search {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .navbar-logo {
+        font-size: 26px;
+    }
+    
+    .navbar-links {
+        display: flex;
+    }
+    
+    .navlink {
+        font-size:16px;
+    }
+    
+    
+}
+
+.rick-and-morty {
+    font-size: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    /* text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
+    animation: animacion-neon 1s ease-in-out infinite alternate; */
+    animation: changeColor 5s linear infinite alternate;
+}
+
+/* @keyframes animacion-neon {
+  0% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00, 0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 60px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 50px #ff0000, 0 0 60px #ff0000, 0 0 70px #ff0000;
+  }
+} */
+
+@keyframes changeColor {
+    0% {
+        color: #F44336;
+    }
+    
+    25% {
+        color: #FFEB3B;
+    }
+
+    50% {
+        color: #4CAF50;
+    }
+
+    75% {
+        color: #2196F3;
+    }
+
+    100% {
+        color: #9C27B0;
+
+    }
+}
+
+
+ 
+
+.logout-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f;
+  }
+  
+/* navlink active css */
+
+.active {
+    background-color: rgba(255, 0, 0, 0.629);
+    border-radius: 5px;
+}
+
+.icon-logout {
+    font-size: 20px;
+}
+
+.Toastify__toast {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-toast-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  .custom-toast-button {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 0 10px;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .custom-toast-button-yes {
+    background-color: #3cb371; /* Color de fondo para el botón "Sí" */
+  }
+  
+  .custom-toast-button-no {
+    background-color: #ff4500; /* Color de fondo para el botón "No" */
+  }
+  

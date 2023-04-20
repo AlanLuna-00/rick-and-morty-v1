@@ -1,0 +1,32 @@
+.footer {
+   /* background-color: #00000008; */
+    backdrop-filter: blur(7px); 
+    background-color: #ffffff35;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+  }
+
+  .footer a {
+    text-decoration: none;
+    margin: 5px;
+  }
+
+.linkedin {
+    color: #0e76a8;
+    font-size: 24px;
+}
+
+.github {
+    color: #000000;
+    font-size: 24px;
+}
+

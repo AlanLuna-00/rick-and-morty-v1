@@ -1,0 +1,57 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 3vw; /* Se ajusta el padding en unidades de viewport width (vw) para hacerlo responsive */
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  width: 80%; /* Se ajusta el ancho en porcentaje para hacerlo responsive */
+  max-width: 600px; /* Se agrega un máximo de ancho para evitar que el formulario se haga demasiado grande en pantallas grandes */
+}
+
+.title-form {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+}
+
+.formInput {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.buttonLogin {
+  background-color: #1c1088;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+
+.userData {
+  color: rgba(143, 140, 140, 0.581);
+  font-size: 14px;
+  text-align: center;
+}

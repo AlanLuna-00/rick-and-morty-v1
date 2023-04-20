@@ -1,0 +1,171 @@
+.card-pj {
+  background-color: #ffffff;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  margin-top: 50px;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  transition: ease 0.6s;
+}
+
+.img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+.status_alive {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  /* color so green */
+  color: #16c116;
+}
+
+.status_dead {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  /* color so red */
+  color: #e32f2f;
+}
+
+.gender {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+.origin {
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4e4e4e;
+}
+
+.detail {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: gray;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.detail:hover {
+  background-color: #4e4e4e;
+}
+
+.detail-dead {
+  background-color: #e32f2f;
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.detail-dead:hover {
+  background-color: #c31e1e;
+}
+
+.detail-alive {
+  margin-top: 20px;
+  padding: 10px 20px;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  background-color: #43c95e;
+}
+
+.detail-alive:hover {
+  background-color: #2da14a;
+}
+
+.quit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: #4e4e4e;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quit:hover {
+  color: red;
+}
+
+.card-pj.dead {
+  animation: pulseDead 1.5s infinite;
+}
+
+@keyframes pulseDead {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0.8);
+  }
+
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(255, 0, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(255, 0, 0, 0);
+  }
+}
+
+.card-pj.alive {
+  animation: pulseAlive 1.5s infinite;
+}
+
+@keyframes pulseAlive {
+  0% {
+    box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0.8);
+  }
+
+  50% {
+    box-shadow: 0px 0px 0px 15px rgba(55, 255, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0px 0px 0px 0px rgba(55, 255, 0, 0);
+  }
+}
+
+.favButton {
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}

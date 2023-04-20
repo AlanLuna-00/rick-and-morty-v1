@@ -1,0 +1,31 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    margin: 50px auto;
+  }
+  
+  .about_title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .about_version {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .about_description {
+    font-size: 24px;
+    color: #555;
+    text-align: center;
+  }
+  

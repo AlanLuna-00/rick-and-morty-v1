@@ -1,11 +1,19 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  /* background-color: black;
+  background-image: url('./galaxy-stars.png'); */
+  background-color:#090b1a;
+  height: 100vh;
+}
+  
+/* Agregamos un estilo de cursor personalizado usando la propiedad "url" y proporcionando una imagen */
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
