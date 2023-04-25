@@ -1,25 +1,29 @@
 import { ADD_FAV, REMOVE_FAV, FILTER_CARDS, ORDER_CARDS, GET_CHARACTER_DETAIL, CLEAN_CHARACTER_DETAIL } from "./actions";
 
+const favoritesFromStorage = localStorage.getItem('favorites')
+
 const initialState = {
   allCharacters: [],
-  myFavorites: [],
+  myFavorites: favoritesFromStorage ? JSON.parse(favoritesFromStorage) : [],
   characterDetail: {},
 };
-
 const rootReducer = (state = initialState, action) => {
+  let updatedFavorites = [];
   switch (action.type) {
     case ADD_FAV:
+      updatedFavorites = [...state.myFavorites, action.payload];
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
       return {
         ...state,
         allCharacters: [...state.allCharacters, action.payload],
-        myFavorites: [...state.myFavorites, action.payload],
+        myFavorites: updatedFavorites,
       };
     case REMOVE_FAV:
+      updatedFavorites = state.myFavorites.filter((item) => item.id !== action.payload);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
       return {
         ...state,
-        myFavorites: [
-          ...state.myFavorites.filter((char) => char.id !== action.payload),
-        ],
+        myFavorites: updatedFavorites,
       };
     case FILTER_CARDS:
       const allCharactersCopy = [...state.allCharacters];
@@ -50,11 +54,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         characterDetail: action.payload,
       };
-      case CLEAN_CHARACTER_DETAIL:
-        return {
-          ...state,
-          characterDetail: {},
-        };
+    case CLEAN_CHARACTER_DETAIL:
+      return {
+        ...state,
+        characterDetail: {},
+      };
     default:
       return { ...state };
   }

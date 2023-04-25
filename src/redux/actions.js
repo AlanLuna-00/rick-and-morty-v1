@@ -14,15 +14,16 @@ export const filterCards = (gender) => ({ type: FILTER_CARDS, payload: gender })
 export const orderCards = (order) => ({ type: ORDER_CARDS, payload: order })
 
 export const getCharacterDetail = (id) => {
-    return function (dispatch) {
-
-        fetch(`https://rickandmortyapi.com/api/character/${id}`)
-            .then((res) => res.json())
-            .then((data) => {
-                dispatch({ type: GET_CHARACTER_DETAIL, payload: data })
-            }
-            );
-    }
-}
+    return async (dispatch) => {
+      try {
+        const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+        const data = await response.json();
+        dispatch({ type: GET_CHARACTER_DETAIL, payload: data });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+  };
+  
 
 export const cleanCharacterDetail = () => ({ type: CLEAN_CHARACTER_DETAIL })

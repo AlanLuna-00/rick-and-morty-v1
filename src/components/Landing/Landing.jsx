@@ -12,25 +12,35 @@ import toast, { Toaster } from 'react-hot-toast';
 
 
 function Landing() {
-  const [Characters, setCharacters] = useState([]);
+  const [Characters, setCharacters] = useState(() => {
+    const storedCharacters = JSON.parse(localStorage.getItem('Characters'));
+    return storedCharacters || [];
+  });
 
-  const onSearch = (id) => {
-    fetch(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data)
-        if (Characters.find((value) => value.id === data.id)) {
-          toast.error("El dato es invalido o ya fue agregado");
-        } else if (id === "" || id > 826 || id < 1) {
-          toast.error('El dato es invalido o ya fue agregado');
-        } else {
-          setCharacters([data, ...Characters]);
-        }
-      });
+  const onSearch = async (id) => {
+    try {
+      const response = await fetch(`https://rickandmortyapi.com/api/character/${id}`);
+      const data = await response.json();
+      console.log(data);
+      if (Characters.find((value) => value.id === data.id)) {
+        toast.error("El dato es invalido o ya fue agregado");
+      } else if (id === "" || id > 826 || id < 1) {
+        toast.error('El dato es invalido o ya fue agregado');
+      } else {
+        setCharacters([data, ...Characters]);
+        localStorage.setItem('Characters', JSON.stringify([data, ...Characters]));
+        toast.success(`Se agrego a ${data.name} con el id ${data.id}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
+  
 
   const onClose = (id) => {
     setCharacters(Characters.filter((_value, i) => i !== parseInt(id)));
+    localStorage.setItem('Characters', JSON.stringify(Characters.filter((_value, i) => i !== parseInt(id))));
+    toast.error(`Se elimino el personaje exitosamente`);
   };
 
   const navigate = useNavigate();

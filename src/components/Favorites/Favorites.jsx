@@ -28,7 +28,6 @@ const Favorites = () => {
     console.log(aux)
   };
 
-
   return (
     <>
       <div className="container-filters">
